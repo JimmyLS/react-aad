@@ -1,14 +1,17 @@
 import { MsalAuthProvider, LoginType } from "react-aad-msal";
 import { Logger, LogLevel } from "msal";
+import * as msal_browser from "@azure/msal-browser"
 
 // The auth provider should be a singleton. Best practice is to only have it ever instantiated once.
 // Avoid creating an instance inside the component it will be recreated on each render.
 // If two providers are created on the same page it will cause authentication errors.
-export const authProvider = new MsalAuthProvider(
+export const authProvider = new MsalAuthProvider
+//export const authProvider = new msal_browser.PublicClientApplication
+(
   {
     auth: {
       authority: "https://login.microsoftonline.com/common",
-      clientId: "0f2c6253-3928-4fea-b131-bf6ef8f69e9c",
+      clientId: "30438524-af83-4328-8f20-2385084a30de",
       postLogoutRedirectUri: window.location.origin,
       redirectUri: window.location.origin,
       validateAuthority: true,

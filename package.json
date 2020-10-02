@@ -18,7 +18,10 @@
     "test": "yarn workspace react-aad-msal test",
     "build": "yarn workspace react-aad-msal build"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@azure/msal-browser": "^2.2.1",
+    "webpack": "4.41.5"
+  },
   "husky": {
     "hooks": {
       "pre-commit": "lerna run --concurrency 1 --stream precommit"
